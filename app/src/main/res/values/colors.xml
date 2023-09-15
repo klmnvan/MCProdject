@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+
+<!--    Светлая тема-->
+    <color name="button_click_light_theme">#0xFF1977FF</color>
+    <color name="button_no_click_light_theme">#0xFFB4C5F5</color>
+    <color name="button_text_light_theme">#0xFFFFFFFF</color>
+    <color name="typography_light_theme">#0xFF00337C</color>
+    <color name="typography_textfield_light_theme">#0xFF000000</color>
+    <color name="vector_res_light_theme">#0xFFAAADB2</color>
+    <color name="border_shape_light_theme">#0xFFB4C5F5</color>
+    <color name="background_shape_light_theme">#0xFFF5F5F5</color>
+    <color name="background_screen_light_theme">#0xFFFFFFFF</color>
+    <color name="error_light_theme">#0xFFFD3535</color>
+
+<!--    Темная тема-->
+    <color name="button_click_dark_theme">#0xFF1977FF</color>
+    <color name="button_no_click_dark_theme">#0xFF555B69</color>
+    <color name="button_text_dark_theme">#0xFFFFFFFF</color>
+    <color name="typography_dark_theme">#0xFFFFFFFF</color>
+    <color name="typography_textfield_dark_theme">#0xFFFFFFFF</color>
+    <color name="vector_res_dark_theme">#0xFFAAADB2</color>
+    <color name="border_shape_dark_theme">#0xFF39425F</color>
+    <color name="background_shape_dark_theme">#0xFF323644</color>
+    <color name="background_screen_dark_theme">#0xFF272A37</color>
+    <color name="error_dark_theme">#0xFFFD3535</color>
+
+</resources>

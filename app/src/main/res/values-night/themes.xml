@@ -1,0 +1,15 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MCProdject" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorSecondary">@color/button_click_dark_theme</item>
+        <item name="colorSecondaryVariant">@color/button_no_click_dark_theme</item>
+        <item name="colorOnBackground">@color/background_screen_dark_theme</item>
+        <item name="colorSurface">@color/background_shape_dark_theme</item>
+        <item name="colorError">@color/error_dark_theme</item>
+        <item name="colorOnPrimary">@color/vector_res_dark_theme</item>
+        <item name="colorOnSecondary">@color/border_shape_dark_theme</item>
+        <item name="colorOnSurface">@color/typography_dark_theme</item>
+        <item name="colorPrimary">@color/typography_textfield_dark_theme</item>
+        <item name="colorPrimaryVariant">@color/button_text_dark_theme</item>
+    </style>
+</resources>
