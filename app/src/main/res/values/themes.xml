@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     
-    <style name="Theme.MCProdject"  parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MCProdject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorSecondary">@color/button_click_light_theme</item>
         <item name="colorSecondaryVariant">@color/button_no_click_light_theme</item>
         <item name="colorOnBackground">@color/background_screen_light_theme</item>
@@ -11,6 +11,37 @@
         <item name="colorOnSurface">@color/typography_light_theme</item>
         <item name="colorPrimary">@color/typography_textfield_light_theme</item>
         <item name="colorPrimaryVariant">@color/button_text_light_theme</item>
+    </style>
+
+    <style name="TextTitle" parent="Theme.MCProdject">
+        <item name="fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize" tools:ignore="SpUsage">36dp</item>
+    </style>
+
+    <style name="TextBase" parent="Theme.MCProdject">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize" tools:ignore="SpUsage">18dp</item>
+    </style>
+    
+    <style name="TextHint" parent="Theme.MCProdject">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
+    </style>
+
+    <style name="TextInput" parent="Theme.MCProdject">
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Button" parent="Theme.MCProdject">
+        <item name="fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:padding">14dp</item>
     </style>
 
 </resources>
