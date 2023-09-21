@@ -56,7 +56,7 @@
         <EditText
             android:id="@+id/inputTextLogin"
             style="@style/TextInput"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@null"
@@ -90,7 +90,7 @@
         <EditText
             android:id="@+id/inputTextPassword"
             style="@style/TextInput"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:background="@null"
@@ -115,13 +115,41 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         tools:ignore="HardcodedText" />
 
-    <TextView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonNext">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ещё нет аккаута? "
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/buttonRegist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Зарегистрируйтесь!"
+            android:textColor="?attr/colorSecondary"
+            tools:ignore="HardcodedText" />
+
+    </LinearLayout>
+
+    <!--<TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:gravity="center_horizontal"
         android:layout_marginHorizontal="20dp"
         android:text="@string/already"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
