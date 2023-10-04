@@ -73,13 +73,13 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textTimer"
         style="@style/TextOnCenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="60dp"
         android:layout_marginTop="35dp"
-        android:text="Отправить код повторно можно будет через 49 секунд"
+        android:text="Отправить код повторно можно будет через * секунд"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -96,7 +96,7 @@
         android:text="Подтвердить"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textTimer"
         tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,7 +20,7 @@ class Authorization : AppCompatActivity() {
         processInput()
     }
 
-    /*
+    /**
     processInput() - функция, которая красит кнопку в другой цвет, когда она становится
     кликабельной */
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -34,7 +34,7 @@ class Authorization : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    сheckingfields()
+                    checkingfields()
                     if(inputTextLogin.text.isNotEmpty()) {
                         loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
                     } else {
@@ -50,7 +50,7 @@ class Authorization : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    сheckingfields()
+                    checkingfields()
                     if(inputTextPassword.text.isNotEmpty()) {
                         passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
                     } else {
@@ -65,7 +65,7 @@ class Authorization : AppCompatActivity() {
      * сheckingfields() - проверка заполнения полей
      * */
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun сheckingfields(){
+    private fun checkingfields(){
         with(binding){
             if(inputTextLogin.text.isNotEmpty() && inputTextPassword.text.isNotEmpty()){
                 buttonNext.background = getDrawable(R.drawable.for_button__blue__null__rounded_edges)
