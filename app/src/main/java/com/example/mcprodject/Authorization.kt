@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import com.example.mcprodject.databinding.ActivityAuthorizationBinding
@@ -34,6 +35,11 @@ class Authorization : AppCompatActivity() {
 
                 override fun afterTextChanged(p0: Editable?) {
                     сheckingfields()
+                    if(inputTextLogin.text.isNotEmpty()) {
+                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                    } else {
+                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                    }
                 }
             })
             inputTextPassword.addTextChangedListener(object: TextWatcher{
@@ -45,6 +51,11 @@ class Authorization : AppCompatActivity() {
 
                 override fun afterTextChanged(p0: Editable?) {
                     сheckingfields()
+                    if(inputTextPassword.text.isNotEmpty()) {
+                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                    } else {
+                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                    }
                 }
             })
         }
@@ -66,10 +77,17 @@ class Authorization : AppCompatActivity() {
             else {
                 buttonNext.background = getDrawable(R.drawable.for_button__blue_light__null__rounded_edges)
                 buttonNext.setOnClickListener {
-                    Toast.makeText(this@Authorization,  "Не все поля заполнены", Toast.LENGTH_LONG).show()
+                    textError.visibility = View.VISIBLE
+                    if(inputTextPassword.text.isEmpty()) {
+                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__red__rounded_edges)
+                    }
+                    if(inputTextLogin.text.isEmpty()) {
+                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__red__rounded_edges)
+                    }
                 }
             }
         }
 
     }
+
 }

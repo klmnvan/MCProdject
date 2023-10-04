@@ -8,12 +8,95 @@
     android:background="?attr/colorOnBackground">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/buttonBack"
         style="@style/DefaultButtonBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription" />
+        tools:ignore="ContentDescription,UseAppTint" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="60dp"
+        style="@style/TextOnCenter"
+        android:text="Мы отправили одноразовый код на ваш адрес электронной почты для подтверждения "
+        app:layout_constraintTop_toBottomOf="@+id/buttonBack"
+        tools:ignore="HardcodedText,SpUsage"
+        tools:layout_editor_absoluteX="20dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/TextOnCenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/inter_semi_bold"
+        android:text="Введите код из Email"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <EditText
+            android:id="@+id/inputNumber1"
+            style="@style/inputNumber"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <EditText
+            android:id="@+id/inputNumber2"
+            style="@style/inputNumber"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <EditText
+            android:id="@+id/inputNumber3"
+            style="@style/inputNumber"
+            tools:ignore="HardcodedText,SpUsage" />
+
+        <EditText
+            android:id="@+id/inputNumber4"
+            style="@style/inputNumber"
+            tools:ignore="HardcodedText,SpUsage" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/TextOnCenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="60dp"
+        android:layout_marginTop="35dp"
+        android:text="Отправить код повторно можно будет через 49 секунд"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="HardcodedText,SpUsage" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/buttonNext"
+        style="@style/Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/for_button__blue_light__null__rounded_edges"
+        android:text="Подтвердить"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        tools:ignore="HardcodedText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

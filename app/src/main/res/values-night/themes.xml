@@ -37,6 +37,18 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="DefaultButtonBack" parent="Theme.MCProdject">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="srcCompat">@drawable/icon_button_back</item>
+        <item name="android:background">@drawable/for_vector_res__grey__null__roungeg_edges</item>
+        <item name="android:padding">11dp</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="tint">?attr/colorPrimary</item>
+    </style>
+
     <!--Пока не нужно-->
     <!--<style name="buttonClick" parent="Theme.MCProdject">
         <item name="background">@drawable/for_button__blue__null__rounded_edges</item>

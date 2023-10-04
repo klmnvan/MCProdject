@@ -45,10 +45,36 @@
     </style>
     
     <style name="DefaultButtonBack" parent="Theme.MCProdject">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginTop">24dp</item>
         <item name="android:layout_marginStart">20dp</item>
         <item name="srcCompat">@drawable/icon_button_back</item>
+        <item name="android:background">@drawable/for_vector_res__grey__null__roungeg_edges</item>
+        <item name="android:padding">11dp</item>
         <item name="android:adjustViewBounds">true</item>
+        <item name="tint">?attr/colorPrimary</item>
     </style>
 
+    <style name="TextOnCenter" parent="Theme.MCProdject">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="inputNumber" parent="Theme.MCProdject">
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/for_input_text__white__blue_light__rounded_edges</item>
+        <item name="android:gravity">center</item>
+        <item name="android:hint">0</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColorHint">?attr/colorOnPrimary</item>
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:text">1</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:layout_marginHorizontal">5dp</item>
+        <item name="android:inputType">number</item>
+        <item name="android:maxLength">1</item>
+    </style>
 </resources>

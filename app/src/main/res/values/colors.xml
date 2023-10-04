@@ -9,7 +9,7 @@
     <color name="typography_light_theme">#FF00337C</color>
     <color name="typography_textfield_light_theme">#FF000000</color>
     <color name="vector_res_light_theme">#FFAAADB2</color>
-    <color name="border_shape_light_theme">#FFB4C5F5</color>
+    <color name="border_shape_light_theme">#F5F5F5</color>
     <color name="background_shape_light_theme">#FFF5F5F5</color>
     <color name="background_screen_light_theme">#FFFFFFFF</color>
     <color name="error_light_theme">#FFFD3535</color>
