@@ -21,12 +21,13 @@ class InputCodeForAuthorization : AppCompatActivity() {
         startTimer()
         checkingfields()
     }
-    //Запускает таймер при открытии активности (пока что)
+
+    /** startTimer() Запускает таймер при открытии активности (пока что)*/
     private fun startTimer(){
-        val timer = object: CountDownTimer(600000, 1000){
+        val timer = object: CountDownTimer(60000, 1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(p0: Long) {
-                var sec = p0 / 10000
+                val sec = p0 / 1000 ///перевод миллесекунд в секунды
                 binding.textTimer.text = "Отправить код повторно можно будет через $sec секунд"
             }
             override fun onFinish() {
@@ -35,9 +36,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
         timer.start()
     }
 
-    /**
-    processInput() - функция, которая красит кнопку в другой цвет, когда она становится
-    кликабельной */
+    /** processInput() - функция, которая красит кнопку в другой цвет, когда она становится кликабельной */
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun processInput(){
         with(binding){
@@ -55,9 +54,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
 
     }
 
-    /**
-     * сheckingfields() - проверка заполнения полей
-     * */
+    /** сheckingfields() - проверка заполнения полей */
     private fun checkingfields(){
         with (binding){
             inputNumber1.addTextChangedListener (object: TextWatcher {
@@ -75,8 +72,8 @@ class InputCodeForAuthorization : AppCompatActivity() {
                     }
                     else {
                         inputNumber1.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber2.requestFocus()
                     }
-                    inputNumber2.requestFocus()
                     processInput()
                 }
             })
@@ -92,11 +89,12 @@ class InputCodeForAuthorization : AppCompatActivity() {
                     if(inputNumber2.text.isEmpty()) {
                         inputNumber2.background =
                             getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inputNumber1.requestFocus()
                     }
                     else {
                         inputNumber2.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber3.requestFocus()
                     }
-                    inputNumber3.requestFocus()
                     processInput()
                 }
             })
@@ -112,11 +110,12 @@ class InputCodeForAuthorization : AppCompatActivity() {
                     if(inputNumber3.text.isEmpty()) {
                         inputNumber3.background =
                             getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inputNumber2.requestFocus()
                     }
                     else {
                         inputNumber3.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber4.requestFocus()
                     }
-                    inputNumber4.requestFocus()
                     processInput()
                 }
             })
@@ -132,11 +131,12 @@ class InputCodeForAuthorization : AppCompatActivity() {
                     if(inputNumber4.text.isEmpty()) {
                         inputNumber4.background =
                             getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inputNumber3.requestFocus()
                     }
                     else {
                         inputNumber4.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        buttonNext.requestFocus()
                     }
-                    inputNumber4.isFocusable = false
                     processInput()
                 }
             })

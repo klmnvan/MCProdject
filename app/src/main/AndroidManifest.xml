@@ -16,6 +16,12 @@
         android:theme="@style/Theme.MCProdject"
         tools:targetApi="31">
         <activity
+            android:name=".Registration"
+            android:exported="false" />
+        <activity
+            android:name=".EndRegistration"
+            android:exported="false" />
+        <activity
             android:name=".InputCodeForAuthorization"
             android:exported="false" />
         <activity
