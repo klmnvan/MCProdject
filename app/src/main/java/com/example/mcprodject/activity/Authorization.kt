@@ -1,4 +1,4 @@
-package com.example.mcprodject
+package com.example.mcprodject.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.Toast
-import androidx.core.widget.addTextChangedListener
+import com.example.mcprodject.R
 import com.example.mcprodject.databinding.ActivityAuthorizationBinding
 
 class Authorization : AppCompatActivity() {
@@ -18,6 +17,10 @@ class Authorization : AppCompatActivity() {
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         processInput()
+        binding.buttonRegist.setOnClickListener {
+            startActivity(Intent(this@Authorization, Registration::class.java))
+            finish()
+        }
     }
 
     /**

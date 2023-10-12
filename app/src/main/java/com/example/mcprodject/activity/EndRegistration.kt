@@ -1,4 +1,4 @@
-package com.example.mcprodject
+package com.example.mcprodject.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

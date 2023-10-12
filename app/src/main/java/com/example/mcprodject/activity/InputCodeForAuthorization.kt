@@ -1,4 +1,4 @@
-package com.example.mcprodject
+package com.example.mcprodject.activity
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,8 +7,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
-import androidx.core.widget.addTextChangedListener
-import com.example.mcprodject.databinding.ActivityAuthorizationBinding
+import com.example.mcprodject.R
 import com.example.mcprodject.databinding.ActivityInputCodeForAuthorizationBinding
 
 class InputCodeForAuthorization : AppCompatActivity() {

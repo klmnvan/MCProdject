@@ -4,128 +4,273 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Registration"
+    tools:context=".activity.Registration"
     android:background="?attr/colorOnBackground">
 
-    <ImageView
-        android:id="@+id/buttonBack"
-        style="@style/DefaultButtonBack"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="ContentDescription,UseAppTint" />
-
-    <TextView
-        android:id="@+id/textView"
-        style="@style/TextTitle"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="80dp"
-        android:text="Регистрация"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText,SpUsage" />
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="25dp"
-        android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
-        android:orientation="vertical"
-        android:padding="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <ImageView
+                android:id="@+id/buttonBack"
+                style="@style/DefaultButtonBack"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,UseAppTint" />
 
-        <TextView
-            style="@style/TextHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Фамилия"
-            tools:ignore="HardcodedText" />
+            <TextView
+                android:id="@+id/textView"
+                style="@style/TextTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="80dp"
+                android:text="Регистрация"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,SpUsage" />
 
-        <EditText
-            android:id="@+id/inputTextF"
-            style="@style/TextInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:background="@null"
-            android:hint="Иванов"
-            android:inputType="text"
-            android:text=""
-            tools:ignore="Autofill,HardcodedText" />
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/LinearLayoutF"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="25dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView">
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutI"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
-        android:orientation="vertical"
-        android:padding="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutF">
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Фамилия"
+                    tools:ignore="HardcodedText" />
 
-        <TextView
-            style="@style/TextHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Имя"
-            tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/inputTextF"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="Иванов"
+                    android:inputType="text"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
 
-        <EditText
-            android:id="@+id/inputTextI"
-            style="@style/TextInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:background="@null"
-            android:hint="Иван"
-            android:inputType="text"
-            android:text=""
-            tools:ignore="Autofill,HardcodedText" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/LinearLayoutI"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutF">
 
-    <LinearLayout
-        android:id="@+id/LinearLayoutO"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
-        android:orientation="vertical"
-        android:padding="14dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayoutI">
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Имя"
+                    tools:ignore="HardcodedText" />
 
-        <TextView
-            style="@style/TextHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Отество"
-            tools:ignore="HardcodedText" />
+                <EditText
+                    android:id="@+id/inputTextI"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="Иван"
+                    android:inputType="text"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
 
-        <EditText
-            android:id="@+id/inputTextO"
-            style="@style/TextInput"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:background="@null"
-            android:hint="Иванович"
-            android:inputType="text"
-            android:text=""
-            tools:ignore="Autofill,HardcodedText" />
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/LinearLayoutO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutI">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Отество"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputTextO"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="Иванович"
+                    android:inputType="text"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutMK"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutO">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Методическая комиссия"
+                    tools:ignore="HardcodedText" />
+
+                <Spinner
+                    android:id="@+id/SpinnerMK"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:inputType="text"
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutMK">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Логин"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputLogin"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="login@bla.ru"
+                    android:inputType="text"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutLogin">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Пароль"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputPassword"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="qwerty123"
+                    android:inputType="textPassword"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LinearLayoutPasswordReplay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+                android:orientation="vertical"
+                android:padding="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayoutPassword">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Пароль"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputPasswordReplay"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="qwerty123"
+                    android:inputType="textPassword"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+     </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
