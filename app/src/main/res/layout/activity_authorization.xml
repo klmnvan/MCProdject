@@ -26,7 +26,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
         android:text="Войдите, чтобы пользоваться функциями приложения"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,70 +33,127 @@
         tools:ignore="HardcodedText" />
 
     <LinearLayout
-        android:id="@+id/loginLinearLayout"
+        android:id="@+id/loginLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="25dp"
-        android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
-        android:orientation="vertical"
-        android:padding="14dp"
+        android:padding="3dp"
+        android:background="@drawable/lgray_3_lgray_rectg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-        <TextView
-            style="@style/TextHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Логин"
-            tools:ignore="HardcodedText" />
-
-        <EditText
-            android:id="@+id/inputTextLogin"
-            style="@style/TextInput"
+        <LinearLayout
+            android:id="@+id/inLoginLL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="12dp"
+            android:orientation="horizontal"
             android:background="@null"
-            android:hint="example@ya.ru"
-            android:inputType="text"
-            android:text=""
-            tools:ignore="Autofill,HardcodedText" />
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Логин"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputTextLogin"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="example@ya.ru"
+                    android:inputType="text"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/buttonDeleteLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_delete_text_for_input_text"
+                android:layout_gravity="center_vertical"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/passwordLinearLayout"
+        android:id="@+id/passwordLL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/for_input_text__white__blue_light__rounded_edges"
+        android:background="@drawable/lgray_3_lgray_rectg"
         android:orientation="vertical"
-        android:padding="14dp"
+        android:padding="3dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginLinearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/loginLL">
 
-        <TextView
-            style="@style/TextHint"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Пароль"
-            tools:ignore="HardcodedText" />
-
-        <EditText
-            android:id="@+id/inputTextPassword"
-            style="@style/TextInput"
+        <LinearLayout
+            android:id="@+id/inPasswordLL"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="12dp"
+            android:orientation="horizontal"
             android:background="@null"
-            android:hint="qwerty123"
-            android:inputType="textPassword"
-            android:text=""
-            tools:ignore="Autofill,HardcodedText,TextFields" />
+            tools:ignore="UselessParent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextHint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Пароль"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/inputTextPassword"
+                    style="@style/TextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:background="@null"
+                    android:hint="qwerty123"
+                    android:inputType="textPassword"
+                    android:text=""
+                    tools:ignore="Autofill,HardcodedText,TextFields" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/buttonDeletePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_delete_text_for_input_text"
+                android:layout_gravity="center_vertical"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -107,11 +163,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="15dp"
-        android:visibility="invisible"
+        android:visibility="gone"
         android:text="Не все поля заполнены"
         android:textSize="14dp"
         android:textColor="?attr/colorError"
-        app:layout_constraintTop_toBottomOf="@+id/passwordLinearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/passwordLL"
         tools:ignore="HardcodedText,SpUsage" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -122,7 +178,7 @@
         android:layout_marginTop="20dp"
         android:text="Далее"
         style="@style/Button"
-        android:background="@drawable/for_button__blue_light__null__rounded_edges"
+        android:background="@drawable/null_ncgray_rectg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textError"
@@ -160,14 +216,5 @@
             tools:ignore="HardcodedText,SpUsage" />
 
     </LinearLayout>
-
-    <!--<TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center_horizontal"
-        android:layout_marginHorizontal="20dp"
-        android:text="@string/already"
-        app:layout_constraintTop_toBottomOf="@+id/buttonNext" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

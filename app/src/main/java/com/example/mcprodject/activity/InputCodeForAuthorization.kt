@@ -40,13 +40,13 @@ class InputCodeForAuthorization : AppCompatActivity() {
     private fun processInput(){
         with(binding){
             if(inputNumber1.text.isNotEmpty() && inputNumber2.text.isNotEmpty() && inputNumber3.text.isNotEmpty() && inputNumber4.text.isNotEmpty()) {
-                buttonNext.background = getDrawable(R.drawable.for_button__blue__null__rounded_edges)
+                buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
                 buttonNext.setOnClickListener {
                     startActivity(Intent(this@InputCodeForAuthorization, Authorization::class.java))
                     finish()
                 }
             } else {
-                buttonNext.background = getDrawable(R.drawable.for_button__blue_light__null__rounded_edges)
+                buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
             }
         }
 
@@ -70,7 +70,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
                             getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
                     else {
-                        inputNumber1.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber1.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                         inputNumber2.requestFocus()
                     }
                     processInput()
@@ -91,7 +91,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
                         inputNumber1.requestFocus()
                     }
                     else {
-                        inputNumber2.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber2.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                         inputNumber3.requestFocus()
                     }
                     processInput()
@@ -112,7 +112,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
                         inputNumber2.requestFocus()
                     }
                     else {
-                        inputNumber3.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber3.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                         inputNumber4.requestFocus()
                     }
                     processInput()
@@ -133,7 +133,7 @@ class InputCodeForAuthorization : AppCompatActivity() {
                         inputNumber3.requestFocus()
                     }
                     else {
-                        inputNumber4.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inputNumber4.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                         buttonNext.requestFocus()
                     }
                     processInput()

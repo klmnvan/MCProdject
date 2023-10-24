@@ -51,7 +51,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextF.text.isNotEmpty()) {
-                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -67,7 +67,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextI.text.isNotEmpty()) {
-                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -83,7 +83,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextO.text.isNotEmpty()) {
-                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -99,7 +99,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputPassword.text.isNotEmpty()) {
-                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -115,7 +115,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputLogin.text.isNotEmpty()) {
-                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -131,7 +131,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputPasswordReplay.text.isNotEmpty()) {
-                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue__rounded_edges)
+                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
                     } else {
                         LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }

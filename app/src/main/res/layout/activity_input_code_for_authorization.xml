@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="35dp"
-        android:background="@drawable/for_button__blue_light__null__rounded_edges"
+        android:background="@drawable/null_ncgray_rectg"
         android:text="Подтвердить"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

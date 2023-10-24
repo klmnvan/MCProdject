@@ -58,7 +58,7 @@
             android:layout_marginBottom="50dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="35dp"
-            android:background="@drawable/for_button__blue__null__rounded_edges"
+            android:background="@drawable/null_blue_rectg"
             android:text="Авторизоваться"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

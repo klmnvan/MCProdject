@@ -1,49 +1,46 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    
+
     <style name="Theme.MCProdject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorSecondary">@color/button_click_light_theme</item>
-        <item name="colorSecondaryVariant">@color/button_no_click_light_theme</item>
-        <item name="colorOnBackground">@color/background_screen_light_theme</item>
-        <item name="colorSurface">@color/background_shape_light_theme</item>
-        <item name="colorError">@color/error_light_theme</item>
-        <item name="colorOnPrimary">@color/vector_res_light_theme</item>
-        <item name="colorOnSecondary">@color/border_shape_light_theme</item>
         <item name="colorOnSurface">@color/typography_light_theme</item>
-        <item name="colorPrimary">@color/typography_textfield_light_theme</item>
-        <item name="colorPrimaryVariant">@color/button_text_light_theme</item>
+        <item name="colorSecondaryVariant">@color/button_no_click_light_theme</item>
+        <item name="colorOnPrimary">@color/vector_res_light_theme</item>
+        <item name="colorSurface">@color/background_shape_light_theme</item>
+        <item name="colorOnBackground">@color/background_screen_light_theme</item>
+        <item name="colorError">@color/error_light_theme</item>
     </style>
 
     <style name="TextTitle" parent="Theme.MCProdject">
-        <item name="fontFamily">@font/inter_semi_bold</item>
+        <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textSize" tools:ignore="SpUsage">36dp</item>
     </style>
 
     <style name="TextBase" parent="Theme.MCProdject">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="fontFamily">@font/raleway_regular</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textSize" tools:ignore="SpUsage">17dp</item>
     </style>
-    
+
     <style name="TextHint" parent="Theme.MCProdject">
-        <item name="fontFamily">@font/inter_regular</item>
+        <item name="fontFamily">@font/raleway_regular</item>
         <item name="android:textSize">10sp</item>
         <item name="android:textColor">?attr/colorOnPrimary</item>
     </style>
 
     <style name="TextInput" parent="Theme.MCProdject">
-        <item name="fontFamily">@font/inter_regular</item>
-        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:textSize">15sp</item>
     </style>
 
     <style name="Button" parent="Theme.MCProdject">
-        <item name="fontFamily">@font/inter_semi_bold</item>
-        <item name="android:textColor">?attr/colorPrimaryVariant</item>
+        <item name="fontFamily">@font/raleway_bold</item>
+        <item name="android:textColor">#FFFFFFFF</item>
         <item name="android:textSize">20sp</item>
         <item name="android:padding">14dp</item>
     </style>
-    
+
     <style name="DefaultButtonBack" parent="Theme.MCProdject">
         <item name="android:layout_width">40dp</item>
         <item name="android:layout_height">40dp</item>
@@ -53,7 +50,7 @@
         <item name="android:background">@drawable/for_vector_res__grey__null__roungeg_edges</item>
         <item name="android:padding">11dp</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="tint">?attr/colorPrimary</item>
+        <item name="tint">?attr/colorOnSurface</item>
     </style>
 
     <style name="TextOnCenter" parent="Theme.MCProdject">
@@ -72,7 +69,7 @@
         <item name="android:textColorHint">?attr/colorOnPrimary</item>
         <item name="android:fontFamily">@font/inter_regular</item>
         <item name="android:text" />
-        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="android:layout_marginHorizontal">5dp</item>
         <item name="android:inputType">number</item>
         <item name="android:maxLength">1</item>

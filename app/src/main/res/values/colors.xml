@@ -2,28 +2,32 @@
 <resources>
     <color name="black">#FF000000</color>
 
-<!--    Светлая тема-->
-    <color name="button_click_light_theme">#FF1977FF</color>
-    <color name="button_no_click_light_theme">#FFB4C5F5</color>
-    <color name="button_text_light_theme">#FFFFFFFF</color>
-    <color name="typography_light_theme">#FF00337C</color>
-    <color name="typography_textfield_light_theme">#FF000000</color>
-    <color name="vector_res_light_theme">#FFAAADB2</color>
-    <color name="border_shape_light_theme">#F5F5F5</color>
-    <color name="background_shape_light_theme">#FFF5F5F5</color>
-    <color name="background_screen_light_theme">#FFFFFFFF</color>
-    <color name="error_light_theme">#FFFD3535</color>
+    <!-- Светлая тема&ndash;&gt;-->
+    <color name="button_click_light_theme">#1977FF</color>
+    <color name="button_no_click_light_theme">#555B69</color>
+    <color name="typography_light_theme">#000000</color>
+    <color name="vector_res_light_theme">#AAADB2</color>
+    <color name="background_shape_light_theme">#F0F0F3</color>
+    <color name="background_screen_light_theme">#FFFFFF</color>
+    <color name="error_light_theme">#FF7C3B</color>
 
-<!--    Темная тема-->
+    <!-- Темная тема-->
     <color name="button_click_dark_theme">#FF1977FF</color>
-    <color name="button_no_click_dark_theme">#FF555B69</color>
-    <color name="button_text_dark_theme">#FFFFFFFF</color>
-    <color name="typography_dark_theme">#FFFFFFFF</color>
-    <color name="typography_textfield_dark_theme">#FFFFFFFF</color>
-    <color name="vector_res_dark_theme">#FFAAADB2</color>
-    <color name="border_shape_dark_theme">#FF39425F</color>
-    <color name="background_shape_dark_theme">#FF323644</color>
-    <color name="background_screen_dark_theme">#FF272A37</color>
-    <color name="error_dark_theme">#FFFD3535</color>
+    <color name="button_no_click_dark_theme">#555B69</color>
+    <color name="typography_dark_theme">#FFFFFF</color>
+    <color name="vector_res_dark_theme">#AAADB2</color>
+    <color name="background_shape_dark_theme">#323644</color>
+    <color name="background_screen_dark_theme">#272A37</color>
+    <color name="error_dark_theme">#FF7C3B</color>
+
+<!--    <color name="typography_textfield_dark_theme">#FFFFFFFF</color>
+    <color name="border_shape_dark_theme">#FF39425F</color>-->
+
+    <!-- Новый стиль-->
+
+    <!--Тёмная-->
+<!--    <color name="background_input_dark_theme">#323644</color>
+    <color name="background_main_dark_theme">#272A37</color>
+    <color name="error_color_dark_theme">#FF7C3B</color>-->
 
 </resources>

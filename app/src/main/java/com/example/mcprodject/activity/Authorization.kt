@@ -17,15 +17,14 @@ class Authorization : AppCompatActivity() {
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         processInput()
+        pressingСlicks()
         binding.buttonRegist.setOnClickListener {
             startActivity(Intent(this@Authorization, Registration::class.java))
             finish()
         }
     }
 
-    /**
-    processInput() - функция, которая красит кнопку в другой цвет, когда она становится
-    кликабельной */
+    /** processInput() - функция, которая красит кнопку в другой цвет, когда она становится кликабельной */
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun processInput(){
         with(binding){
@@ -37,11 +36,11 @@ class Authorization : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
+                    pressingСlicks()
                     if(inputTextLogin.text.isNotEmpty()) {
-                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                     } else {
-                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inLoginLL.background = null
                     }
                 }
             })
@@ -53,39 +52,50 @@ class Authorization : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
+                    pressingСlicks()
                     if(inputTextPassword.text.isNotEmpty()) {
-                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue__rounded_edges)
+                        inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg)
                     } else {
-                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inPasswordLL.background = null
                     }
                 }
             })
         }
     }
 
-    /**
-     * сheckingfields() - проверка заполнения полей
-     * */
+    /** pressingСlicks() - Обработка нажатий*/
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun checkingfields(){
+    private fun pressingСlicks(){
         with(binding){
+            loginLL.setOnClickListener{
+                inputTextLogin.requestFocus()
+            }
+            passwordLL.setOnClickListener{
+                inputTextPassword.requestFocus()
+            }
+            buttonDeleteLogin.setOnClickListener {
+                inputTextLogin.text.clear()
+            }
+            buttonDeletePassword.setOnClickListener {
+                inputTextPassword.text.clear()
+            }
             if(inputTextLogin.text.isNotEmpty() && inputTextPassword.text.isNotEmpty()){
-                buttonNext.background = getDrawable(R.drawable.for_button__blue__null__rounded_edges)
+                buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
+                textError.visibility = View.GONE
                 buttonNext.setOnClickListener {
                     startActivity(Intent(this@Authorization, InputCodeForAuthorization::class.java))
                     finish()
                 }
             }
             else {
-                buttonNext.background = getDrawable(R.drawable.for_button__blue_light__null__rounded_edges)
+                buttonNext.background = getDrawable(R.drawable.null_ncgray_rectg)
                 buttonNext.setOnClickListener {
                     textError.visibility = View.VISIBLE
                     if(inputTextPassword.text.isEmpty()) {
-                        passwordLinearLayout.background = getDrawable(R.drawable.for_input_text__white__red__rounded_edges)
+                        inPasswordLL.background = getDrawable(R.drawable.orange_1_5_null_rectg)
                     }
                     if(inputTextLogin.text.isEmpty()) {
-                        loginLinearLayout.background = getDrawable(R.drawable.for_input_text__white__red__rounded_edges)
+                        inLoginLL.background = getDrawable(R.drawable.orange_1_5_null_rectg)
                     }
                 }
             }

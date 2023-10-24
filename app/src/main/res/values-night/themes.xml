@@ -7,10 +7,8 @@
         <item name="colorSurface">@color/background_shape_dark_theme</item>
         <item name="colorError">@color/error_dark_theme</item>
         <item name="colorOnPrimary">@color/vector_res_dark_theme</item>
-        <item name="colorOnSecondary">@color/border_shape_dark_theme</item>
         <item name="colorOnSurface">@color/typography_dark_theme</item>
-        <item name="colorPrimary">@color/typography_textfield_dark_theme</item>
-        <item name="colorPrimaryVariant">@color/button_text_dark_theme</item>
+
     </style>
 
     <style name="TextTitle" parent="Theme.MCProdject">
@@ -51,7 +49,7 @@
 
     <!--Пока не нужно-->
     <!--<style name="buttonClick" parent="Theme.MCProdject">
-        <item name="background">@drawable/for_button__blue__null__rounded_edges</item>
+    <item name="background">@drawable/for_button__blue__null__rounded_edges</item>
     </style>-->
 
 </resources>
