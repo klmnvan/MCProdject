@@ -38,7 +38,7 @@ class Authorization : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     pressingСlicks()
                     if(inputTextLogin.text.isNotEmpty()) {
-                        inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg)
+                        inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         inLoginLL.background = null
                     }
@@ -54,7 +54,7 @@ class Authorization : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     pressingСlicks()
                     if(inputTextPassword.text.isNotEmpty()) {
-                        inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg)
+                        inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         inPasswordLL.background = null
                     }
@@ -92,10 +92,10 @@ class Authorization : AppCompatActivity() {
                 buttonNext.setOnClickListener {
                     textError.visibility = View.VISIBLE
                     if(inputTextPassword.text.isEmpty()) {
-                        inPasswordLL.background = getDrawable(R.drawable.orange_1_5_null_rectg)
+                        inPasswordLL.background = getDrawable(R.drawable.orange_1_5_null_rectg_20_rad)
                     }
                     if(inputTextLogin.text.isEmpty()) {
-                        inLoginLL.background = getDrawable(R.drawable.orange_1_5_null_rectg)
+                        inLoginLL.background = getDrawable(R.drawable.orange_1_5_null_rectg_20_rad)
                     }
                 }
             }

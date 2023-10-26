@@ -27,31 +27,39 @@ class InputCodeForAuthorization : AppCompatActivity() {
             @SuppressLint("SetTextI18n")
             override fun onTick(p0: Long) {
                 val sec = p0 / 1000 ///перевод миллесекунд в секунды
-                binding.textTimer.text = "Отправить код повторно можно будет через $sec секунд"
+                binding.buttonRepeat.text = "Повторить через $sec сек."
             }
+            @SuppressLint("UseCompatLoadingForDrawables")
             override fun onFinish() {
+                binding.buttonRepeat.text = "Повторить"
+                binding.buttonRepeat.background = getDrawable(R.drawable.null_blue_rectg)
             }
         }
         timer.start()
+    }
+
+    private fun checkCode(){
+        with(binding){
+            if(inputNumber1.text.isNotEmpty() && inputNumber2.text.isNotEmpty() && inputNumber3.text.isNotEmpty() && inputNumber4.text.isNotEmpty()) {
+                startActivity(Intent(this@InputCodeForAuthorization, Authorization::class.java))
+                finish()
+            }
+        }
     }
 
     /** processInput() - функция, которая красит кнопку в другой цвет, когда она становится кликабельной */
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun processInput(){
         with(binding){
-            if(inputNumber1.text.isNotEmpty() && inputNumber2.text.isNotEmpty() && inputNumber3.text.isNotEmpty() && inputNumber4.text.isNotEmpty()) {
-                buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
-                buttonNext.setOnClickListener {
-                    startActivity(Intent(this@InputCodeForAuthorization, Authorization::class.java))
-                    finish()
-                }
-            } else {
-                buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
+            buttonRepeat.background = getDrawable(R.drawable.null_blue_rectg)
+            buttonRepeat.setOnClickListener {
+                buttonRepeat.background = getDrawable(R.drawable.null_ncgray_rectg)
+                startTimer()
             }
         }
-
-
     }
+
+
 
     /** сheckingfields() - проверка заполнения полей */
     private fun checkingfields(){
@@ -66,13 +74,13 @@ class InputCodeForAuthorization : AppCompatActivity() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 override fun afterTextChanged(p0: Editable?) {
                     if(inputNumber1.text.isEmpty()) {
-                        inputNumber1.background =
-                            getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inNum1LL.background = null
                     }
                     else {
-                        inputNumber1.background = getDrawable(R.drawable.blue_1_5_null_rectg)
+                        inNum1LL.background = getDrawable(R.drawable.blue_1_5_null_rectg_15_rad)
                         inputNumber2.requestFocus()
                     }
+                    checkCode()
                     processInput()
                 }
             })
@@ -86,14 +94,14 @@ class InputCodeForAuthorization : AppCompatActivity() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 override fun afterTextChanged(p0: Editable?) {
                     if(inputNumber2.text.isEmpty()) {
-                        inputNumber2.background =
-                            getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inNum2LL.background = null
                         inputNumber1.requestFocus()
                     }
                     else {
-                        inputNumber2.background = getDrawable(R.drawable.blue_1_5_null_rectg)
+                        inNum2LL.background = getDrawable(R.drawable.blue_1_5_null_rectg_15_rad)
                         inputNumber3.requestFocus()
                     }
+                    checkCode()
                     processInput()
                 }
             })
@@ -107,14 +115,14 @@ class InputCodeForAuthorization : AppCompatActivity() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 override fun afterTextChanged(p0: Editable?) {
                     if(inputNumber3.text.isEmpty()) {
-                        inputNumber3.background =
-                            getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inNum3LL.background = null
                         inputNumber2.requestFocus()
                     }
                     else {
-                        inputNumber3.background = getDrawable(R.drawable.blue_1_5_null_rectg)
+                        inNum3LL.background = getDrawable(R.drawable.blue_1_5_null_rectg_15_rad)
                         inputNumber4.requestFocus()
                     }
+                    checkCode()
                     processInput()
                 }
             })
@@ -128,14 +136,14 @@ class InputCodeForAuthorization : AppCompatActivity() {
                 @SuppressLint("UseCompatLoadingForDrawables")
                 override fun afterTextChanged(p0: Editable?) {
                     if(inputNumber4.text.isEmpty()) {
-                        inputNumber4.background =
-                            getDrawable(R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inNum4LL.background = null
                         inputNumber3.requestFocus()
                     }
                     else {
-                        inputNumber4.background = getDrawable(R.drawable.blue_1_5_null_rectg)
-                        buttonNext.requestFocus()
+                        inNum4LL.background = getDrawable(R.drawable.blue_1_5_null_rectg_15_rad)
+                        buttonRepeat.requestFocus()
                     }
+                    checkCode()
                     processInput()
                 }
             })

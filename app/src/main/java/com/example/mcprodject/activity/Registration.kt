@@ -2,14 +2,11 @@ package com.example.mcprodject.activity
 
 import android.R
 import android.annotation.SuppressLint
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
-import com.example.mcprodject.databinding.ActivityAuthorizationBinding
 import com.example.mcprodject.databinding.ActivityRegistrationBinding
 
 
@@ -51,7 +48,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextF.text.isNotEmpty()) {
-                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -67,7 +64,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextI.text.isNotEmpty()) {
-                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -83,7 +80,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputTextO.text.isNotEmpty()) {
-                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -99,7 +96,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputPassword.text.isNotEmpty()) {
-                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -115,7 +112,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputLogin.text.isNotEmpty()) {
-                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
@@ -131,7 +128,7 @@ class Registration : AppCompatActivity() {
                 override fun afterTextChanged(p0: Editable?) {
                     checkingfields()
                     if(inputPasswordReplay.text.isNotEmpty()) {
-                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg)
+                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
                         LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
                     }
