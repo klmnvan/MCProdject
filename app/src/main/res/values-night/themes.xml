@@ -81,4 +81,31 @@
         <item name="android:maxLength">1</item>
     </style>
 
+    <style name="entryFieldL1" parent="Theme.MCProdject">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginHorizontal">20dp</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:padding">3dp</item>
+        <item name="android:background">@drawable/lgray_3_lgray_rectg_20_rad</item>
+    </style>
+
+    <style name="entryFieldL2" parent="Theme.MCProdject">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:paddingHorizontal">14dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="entryFieldL3" parent="Theme.MCProdject">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+
 </resources>

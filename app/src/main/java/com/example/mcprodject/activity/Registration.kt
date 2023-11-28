@@ -2,9 +2,11 @@ package com.example.mcprodject.activity
 
 import android.R
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.example.mcprodject.databinding.ActivityRegistrationBinding
@@ -17,6 +19,7 @@ class Registration : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        processInput()
         createListMK()
     }
 
@@ -29,7 +32,7 @@ class Registration : AppCompatActivity() {
             listMK.map{it.NamesMK}
         ) //selected item will look like a spinner set from XML
         spinnerArrayAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item)
-        binding.SpinnerMK.setAdapter(spinnerArrayAdapter)
+        binding.spinnerMK.setAdapter(spinnerArrayAdapter)
     }
 
     /**
@@ -38,7 +41,7 @@ class Registration : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun processInput(){
         with(binding){
-            inputTextF.addTextChangedListener(object: TextWatcher {
+            inputTextFam.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -46,15 +49,15 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputTextF.text.isNotEmpty()) {
-                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextFam.text.isNotEmpty()) {
+                        inFamLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutF.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inFamLL.background = null
                     }
                 }
             })
-            inputTextI.addTextChangedListener(object: TextWatcher {
+            inputTextName.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -62,15 +65,15 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputTextI.text.isNotEmpty()) {
-                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextName.text.isNotEmpty()) {
+                        inNameLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutI.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inNameLL.background = null
                     }
                 }
             })
-            inputTextO.addTextChangedListener(object: TextWatcher {
+            inputTextOtch.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -78,15 +81,15 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputTextO.text.isNotEmpty()) {
-                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextOtch.text.isNotEmpty()) {
+                        inOtchLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutO.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inOtchLL.background = null
                     }
                 }
             })
-            inputPassword.addTextChangedListener(object: TextWatcher {
+            inputTextLogin.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -94,15 +97,15 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputPassword.text.isNotEmpty()) {
-                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextLogin.text.isNotEmpty()) {
+                        inLoginLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutPassword.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inLoginLL.background = null
                     }
                 }
             })
-            inputLogin.addTextChangedListener(object: TextWatcher {
+            inputTextPassword.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -110,15 +113,15 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputLogin.text.isNotEmpty()) {
-                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextPassword.text.isNotEmpty()) {
+                        inPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutLogin.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inPasswordLL.background = null
                     }
                 }
             })
-            inputPasswordReplay.addTextChangedListener(object: TextWatcher {
+            inputTextRepeatPassword.addTextChangedListener(object: TextWatcher {
                 override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                 }
 
@@ -126,43 +129,93 @@ class Registration : AppCompatActivity() {
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkingfields()
-                    if(inputPasswordReplay.text.isNotEmpty()) {
-                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
+                    pressingСlicks()
+                    if(inputTextRepeatPassword.text.isNotEmpty()) {
+                        inRepeatPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.blue_1_5_null_rectg_20_rad)
                     } else {
-                        LinearLayoutPasswordReplay.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__blue_light__rounded_edges)
+                        inRepeatPasswordLL.background = null
                     }
                 }
             })
         }
     }
 
-    /**
-     * сheckingfields() - проверка заполнения полей
-     * */
+    /** pressingСlicks() - Обработка нажатий*/
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun checkingfields(){
+    private fun pressingСlicks(){
         with(binding){
-            if(inputTextF.text.isNotEmpty() && inputTextI.text.isNotEmpty() && inputTextO.text.isNotEmpty()
-                && inputLogin.text.isNotEmpty() && inputPassword.text.isNotEmpty()
-                && inputPasswordReplay.text.isNotEmpty()){
-                /*buttonNext.background = getDrawable(com.example.mcprodject.R.drawable.for_button__blue__null__rounded_edges)
+            //Чтобы пользователь точно попал по полю ввода
+            famLL.setOnClickListener{
+                inputTextFam.requestFocus()
+            }
+            nameLL.setOnClickListener{
+                inputTextName.requestFocus()
+            }
+            otchLL.setOnClickListener{
+                inputTextOtch.requestFocus()
+            }
+            loginLL.setOnClickListener{
+                inputTextLogin.requestFocus()
+            }
+            passwordLL.setOnClickListener{
+                inputTextPassword.requestFocus()
+            }
+            repeatPasswordLL.setOnClickListener{
+                inputTextRepeatPassword.requestFocus()
+            }
+            //Кнопки очистить поле
+            buttonDeleteFam.setOnClickListener{
+                inputTextFam.text.clear()
+            }
+            buttonDeleteName.setOnClickListener{
+                inputTextName.text.clear()
+            }
+            buttonDeleteOtch.setOnClickListener{
+                inputTextOtch.text.clear()
+            }
+            buttonDeleteLogin.setOnClickListener{
+                inputTextLogin.text.clear()
+            }
+            buttonDeletePassword.setOnClickListener{
+                inputTextPassword.text.clear()
+            }
+            buttonDeleteRepeatPassword.setOnClickListener{
+                inputTextRepeatPassword.text.clear()
+            }
+            //Кнопка далее
+            if(inputTextFam.text.isNotEmpty() && inputTextName.text.isNotEmpty() && inputTextOtch.text.isNotEmpty()
+                && inputTextPassword.text.isNotEmpty() && inputTextRepeatPassword.text.isNotEmpty()
+                && inputTextLogin.text.isNotEmpty()){
+                buttonNext.background = getDrawable(com.example.mcprodject.R.drawable.null_blue_rectg)
+                textError.visibility = View.GONE
                 buttonNext.setOnClickListener {
-                    startActivity(Intent(this@Authorization, InputCodeForAuthorization::class.java))
+                    startActivity(Intent(this@Registration, EndRegistration::class.java))
                     finish()
-                }*/
+                }
             }
             else {
-                /*buttonNext.background = getDrawable(com.example.mcprodject.R.drawable.for_button__blue_light__null__rounded_edges)
+                buttonNext.background = getDrawable(com.example.mcprodject.R.drawable.null_ncgray_rectg)
                 buttonNext.setOnClickListener {
                     textError.visibility = View.VISIBLE
-                    if(inputTextPassword.text.isEmpty()) {
-                        passwordLinearLayout.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__red__rounded_edges)
+                    if(inputTextFam.text.isEmpty()) {
+                        inFamLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
+                    }
+                    if(inputTextName.text.isEmpty()) {
+                        inNameLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
+                    }
+                    if(inputTextOtch.text.isEmpty()) {
+                        inOtchLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
                     }
                     if(inputTextLogin.text.isEmpty()) {
-                        loginLinearLayout.background = getDrawable(com.example.mcprodject.R.drawable.for_input_text__white__red__rounded_edges)
+                        inLoginLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
                     }
-                }*/
+                    if(inputTextPassword.text.isEmpty()) {
+                        inPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
+                    }
+                    if(inputTextRepeatPassword.text.isEmpty()) {
+                        inRepeatPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
+                    }
+                }
             }
         }
 

@@ -34,32 +34,18 @@
 
     <LinearLayout
         android:id="@+id/loginLL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        style="@style/entryFieldL1"
         android:layout_marginTop="25dp"
-        android:padding="3dp"
-        android:background="@drawable/lgray_3_lgray_rectg_20_rad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2">
 
         <LinearLayout
             android:id="@+id/inLoginLL"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="14dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="12dp"
-            android:orientation="horizontal"
-            android:background="@null"
-            tools:ignore="UselessParent">
+            style="@style/entryFieldL2">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                style="@style/entryFieldL3">
 
                 <TextView
                     style="@style/TextHint"
@@ -96,33 +82,17 @@
 
     <LinearLayout
         android:id="@+id/passwordLL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/lgray_3_lgray_rectg_20_rad"
-        android:orientation="vertical"
-        android:padding="3dp"
+        style="@style/entryFieldL1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginLL">
 
         <LinearLayout
             android:id="@+id/inPasswordLL"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingHorizontal="14dp"
-            android:paddingTop="14dp"
-            android:paddingBottom="12dp"
-            android:orientation="horizontal"
-            android:background="@null"
-            tools:ignore="UselessParent">
+            style="@style/entryFieldL2">
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
+                style="@style/entryFieldL3">
 
                 <TextView
                     style="@style/TextHint"
