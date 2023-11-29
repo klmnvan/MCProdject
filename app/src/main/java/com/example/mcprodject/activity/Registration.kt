@@ -215,6 +215,9 @@ class Registration : AppCompatActivity() {
                     if(inputTextRepeatPassword.text.isEmpty()) {
                         inRepeatPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
                     }
+                    if(inputTextRepeatPassword.text.isEmpty()) {
+                        inRepeatPasswordLL.background = getDrawable(com.example.mcprodject.R.drawable.orange_1_5_null_rectg_20_rad)
+                    }
                 }
             }
         }
