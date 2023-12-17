@@ -8,6 +8,7 @@
         <item name="colorError">@color/error_dark_theme</item>
         <item name="colorOnPrimary">@color/vector_res_dark_theme</item>
         <item name="colorOnSurface">@color/typography_dark_theme</item>
+        <item name="colorPrimaryVariant">@color/line_dark_theme</item>
 
     </style>
 

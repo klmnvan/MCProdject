@@ -8,6 +8,7 @@
         <item name="colorSurface">@color/background_shape_light_theme</item>
         <item name="colorOnBackground">@color/background_screen_light_theme</item>
         <item name="colorError">@color/error_light_theme</item>
+        <item name="colorPrimaryVariant">@color/line_light_theme</item>
     </style>
 
     <style name="TextTitle" parent="Theme.MCProdject">

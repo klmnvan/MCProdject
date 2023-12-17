@@ -10,6 +10,7 @@
     <color name="background_shape_light_theme">#F0F0F3</color>
     <color name="background_screen_light_theme">#FFFFFF</color>
     <color name="error_light_theme">#FF7C3B</color>
+    <color name="line_light_theme">#AAADB2</color>
 
     <!-- Темная тема-->
     <color name="button_click_dark_theme">#FF1977FF</color>
@@ -19,6 +20,7 @@
     <color name="background_shape_dark_theme">#323644</color>
     <color name="background_screen_dark_theme">#272A37</color>
     <color name="error_dark_theme">#FF7C3B</color>
+    <color name="line_dark_theme">#FFFFFF</color>
 
 <!--    <color name="typography_textfield_dark_theme">#FFFFFFFF</color>
     <color name="border_shape_dark_theme">#FF39425F</color>-->
