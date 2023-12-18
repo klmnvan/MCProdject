@@ -150,25 +150,94 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/buttonAddEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/menuCL"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:translationY="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/icon_add_event"
+            tools:ignore="ContentDescription,UseAppTint" />
+
+        <LinearLayout
             android:id="@+id/menuCL"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
+            android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            app:layout_constraintTop_toBottomOf="parent">
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="30dp">
 
-            <ImageView
-                android:id="@+id/imagveView9"
+            <LinearLayout
+                android:id="@+id/"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:tint="?attr/colorOnSurface"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/icon_lupa"
-                tools:ignore="ContentDescription,UseAppTint" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imagveView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="?attr/colorOnPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/icon_events"
+                    tools:ignore="ContentDescription,UseAppTint" />
+
+                <TextView
+                    android:id="@+id/textEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Мероприятия"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <ImageView
+                    android:id="@+id/imagveView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="?attr/colorOnPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@drawable/icon_profile"
+                    tools:ignore="ContentDescription,UseAppTint" />
+
+                <TextView
+                    android:id="@+id/textEvents"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Мероприятия"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textSize="14dp"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
 
     </RelativeLayout>
 
