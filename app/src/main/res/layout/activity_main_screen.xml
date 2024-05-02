@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainScreen"
+    tools:context=".activity.screens.MainScreen"
     android:background="?attr/colorOnBackground">
 
     <RelativeLayout
@@ -30,7 +30,7 @@
                 android:id="@+id/imagveView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:tint="?attr/colorOnSurface"
+                android:tint="?attr/colorOnPrimary"
                 app:srcCompat="@drawable/icon_lupa"
                 tools:ignore="ContentDescription,UseAppTint"
                 tools:layout_editor_absoluteX="13dp" />
@@ -39,14 +39,17 @@
                 android:layout_width="1dp"
                 android:layout_height="15dp"
                 android:layout_marginHorizontal="10dp"
-                android:background="?attr/colorSecondary" />
+                android:background="?attr/colorPrimary" />
 
             <EditText
                 android:id="@+id/inputTextPoisk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:inputType="textCapWords"
                 android:background="@null"
+                android:text=""
+                android:textColor="?attr/colorOnPrimary"
                 android:fontFamily="@font/raleway_regular"
                 android:hint="Поиск"
                 android:textSize="15sp"
@@ -57,7 +60,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:tint="?attr/colorOnPrimary"
+                android:tint="?attr/colorOnTertiary"
                 app:srcCompat="@drawable/icon_delete_text_for_input_text"
                 tools:ignore="ContentDescription,RtlHardcoded,UseAppTint" />
 
@@ -73,10 +76,9 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="0dp"
-
-            android:fontFamily="@font/poppins_semibold"
             android:text="Пройденные мероприятия"
-            android:textColor="?attr/colorOnSurface"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="18sp"
             tools:ignore="HardcodedText,MissingConstraints,SpUsage" />
 
@@ -106,7 +108,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/raleway_regular"
                     android:text="Сортировать по"
-                    android:textColor="?attr/colorOnSurface"
+                    android:textColor="?attr/colorOnPrimary"
                     tools:ignore="HardcodedText,InefficientWeight,RtlHardcoded" />
 
                 <ImageView
@@ -125,13 +127,15 @@
             android:layout_height="match_parent"
             android:layout_marginTop="14dp"
             android:layout_below="@id/linearLayout4"
-            android:layout_above="@id/menuCL">
+            android:layout_above="@id/menuCL"
+            android:visibility="visible">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_height="match_parent"
                 android:layout_width="match_parent">
 
                 <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listEvents"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="15dp"
@@ -150,17 +154,39 @@
 
         </androidx.core.widget.NestedScrollView>
 
-        <ImageView
-            android:id="@+id/buttonAddEvent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/menuCL"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:translationY="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/icon_add_event"
-            tools:ignore="ContentDescription,UseAppTint" />
+        <LinearLayout
+            android:id="@+id/LLNoEvents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/linearLayout4"
+            android:layout_above="@id/menuCL"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                app:srcCompat="@drawable/icon_events" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Заявок ещё нет"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/raleway_regular"
+                android:textColor="?attr/colorOnPrimary"
+                android:textSize="15sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_above="@id/menuCL"
+            android:background="?attr/colorOnTertiary"/>
 
         <LinearLayout
             android:id="@+id/menuCL"
@@ -168,11 +194,11 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="30dp">
+            android:paddingTop="12dp"
+            android:paddingBottom="10dp">
 
             <LinearLayout
-                android:id="@+id/"
+                android:id="@+id/buttonEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -180,10 +206,10 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
-                    android:id="@+id/imagveView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tint="?attr/colorOnPrimary"
+                    android:id="@+id/imagveView10"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:tint="?attr/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@drawable/icon_events"
@@ -194,9 +220,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
+                    android:textColor="?attr/colorPrimary"
                     android:text="Мероприятия"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textSize="14dp"/>
+                    android:textSize="12dp"/>
 
             </LinearLayout>
 
@@ -209,6 +236,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/buttonProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -216,28 +244,39 @@
                 android:gravity="center_horizontal">
 
                 <ImageView
-                    android:id="@+id/imagveView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:tint="?attr/colorOnPrimary"
+                    android:id="@+id/iconProfile"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:tint="?attr/colorOnTertiary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:srcCompat="@drawable/icon_profile"
                     tools:ignore="ContentDescription,UseAppTint" />
 
                 <TextView
-                    android:id="@+id/textEvents"
+                    android:id="@+id/textProfile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Мероприятия"
+                    android:text="Профиль"
                     android:fontFamily="@font/poppins_semibold"
-                    android:textSize="14dp"/>
+                    android:textSize="12dp"/>
 
             </LinearLayout>
 
-
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/buttonAddEvent"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_above="@+id/menuCL"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:translationY="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/icon_add_event"
+            tools:ignore="ContentDescription,UseAppTint" />
 
     </RelativeLayout>
 

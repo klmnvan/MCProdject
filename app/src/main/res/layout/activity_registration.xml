@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Registration"
+    tools:context=".activity.screens.Registration"
     android:background="?attr/colorOnBackground">
 
     <androidx.core.widget.NestedScrollView
@@ -24,7 +24,7 @@
 
             <TextView
                 android:id="@+id/textView"
-                style="@style/TextTitle"
+                style="@style/TextTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
@@ -64,7 +64,7 @@
                             android:background="@null"
                             android:hint="Иванов"
                             android:inputType="text"
-                            android:textColor="?attr/colorOnSurface"
+                            android:textColor="?attr/colorOnPrimary"
                             android:text=""
                             tools:ignore="Autofill,HardcodedText" />
 

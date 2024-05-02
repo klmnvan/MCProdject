@@ -1,4 +1,4 @@
-package com.example.mcprodject.activity
+package com.example.mcprodject.activity.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,11 +7,13 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
+import androidx.core.widget.addTextChangedListener
 import com.example.mcprodject.R
 import com.example.mcprodject.databinding.ActivityAuthorizationBinding
 
 class Authorization : AppCompatActivity() {
     lateinit var binding: ActivityAuthorizationBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
@@ -28,38 +30,22 @@ class Authorization : AppCompatActivity() {
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun processInput(){
         with(binding){
-            inputTextLogin.addTextChangedListener(object: TextWatcher{
-                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            inputTextLogin.addTextChangedListener {
+                pressingСlicks()
+                if(inputTextLogin.text.isNotEmpty()) {
+                    inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
+                } else {
+                    inLoginLL.background = null
                 }
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            inputTextPassword.addTextChangedListener {
+                pressingСlicks()
+                if(inputTextPassword.text.isNotEmpty()) {
+                    inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
+                } else {
+                    inPasswordLL.background = null
                 }
-
-                override fun afterTextChanged(p0: Editable?) {
-                    pressingСlicks()
-                    if(inputTextLogin.text.isNotEmpty()) {
-                        inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
-                    } else {
-                        inLoginLL.background = null
-                    }
-                }
-            })
-            inputTextPassword.addTextChangedListener(object: TextWatcher{
-                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                }
-
-                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                }
-
-                override fun afterTextChanged(p0: Editable?) {
-                    pressingСlicks()
-                    if(inputTextPassword.text.isNotEmpty()) {
-                        inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
-                    } else {
-                        inPasswordLL.background = null
-                    }
-                }
-            })
+            }
         }
     }
 

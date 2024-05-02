@@ -1,37 +1,37 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.MCProdject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="colorSecondary">@color/button_click_light_theme</item>
-        <item name="colorOnSurface">@color/typography_light_theme</item>
+        <item name="colorPrimary">@color/button_click_light_theme</item>
+        <item name="colorSecondary">@color/line_light_theme</item>
+        <item name="colorOnPrimary">@color/typography_light_theme</item>
         <item name="colorSecondaryVariant">@color/button_no_click_light_theme</item>
-        <item name="colorOnPrimary">@color/vector_res_light_theme</item>
-        <item name="colorSurface">@color/background_shape_light_theme</item>
+        <item name="colorOnTertiary">@color/vector_res_light_theme</item>
+        <item name="colorTertiary">@color/background_shape_light_theme</item>
         <item name="colorOnBackground">@color/background_screen_light_theme</item>
         <item name="colorError">@color/error_light_theme</item>
-        <item name="colorPrimaryVariant">@color/line_light_theme</item>
     </style>
 
-    <style name="TextTitle" parent="Theme.MCProdject">
+    <style name="TextTittle" parent="Theme.MCProdject">
         <item name="fontFamily">@font/poppins_bold</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize" tools:ignore="SpUsage">36dp</item>
     </style>
 
     <style name="TextBase" parent="Theme.MCProdject">
         <item name="fontFamily">@font/raleway_regular</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize" tools:ignore="SpUsage">17dp</item>
     </style>
 
     <style name="TextHint" parent="Theme.MCProdject">
         <item name="fontFamily">@font/raleway_regular</item>
         <item name="android:textSize">10sp</item>
-        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="android:textColor">?attr/colorOnTertiary</item>
     </style>
 
     <style name="TextInput" parent="Theme.MCProdject">
         <item name="fontFamily">@font/poppins_regular</item>
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:textSize">15sp</item>
     </style>
 
@@ -51,11 +51,11 @@
         <item name="android:background">@drawable/for_vector_res__grey__null__roungeg_edges</item>
         <item name="android:padding">11dp</item>
         <item name="android:adjustViewBounds">true</item>
-        <item name="tint">?attr/colorOnSurface</item>
+        <item name="tint">?attr/colorOnPrimary</item>
     </style>
 
     <style name="TextOnCenter" parent="Theme.MCProdject">
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="fontFamily">@font/raleway_regular</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textSize">12dp</item>
@@ -72,10 +72,10 @@
         <item name="android:paddingTop">16dp</item>
         <item name="android:paddingBottom">16dp</item>-->
         <item name="android:textSize">20sp</item>
-        <item name="android:textColorHint">?attr/colorOnPrimary</item>
+        <item name="android:textColorHint">?attr/colorOnTertiary</item>
         <item name="android:fontFamily">@font/inter_regular</item>
         <item name="android:text" />
-        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textColor">?attr/colorOnPrimary</item>
         <item name="android:layout_marginHorizontal">5dp</item>
         <item name="android:inputType">number</item>
         <item name="android:maxLength">1</item>
@@ -87,7 +87,7 @@
         <item name="android:layout_marginHorizontal">20dp</item>
         <item name="android:layout_marginTop">16dp</item>
         <item name="android:padding">3dp</item>
-        <item name="android:background">@drawable/lgray_3_lgray_rectg_20_rad</item>
+        <item name="android:background">@drawable/lgray_3_lgray_rectg_10_rad</item>
     </style>
 
     <style name="entryFieldL2" parent="Theme.MCProdject">
@@ -105,6 +105,11 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
         <item name="android:orientation">vertical</item>
+    </style>
+  <!-- Base application theme. -->
+    <style name="Base.Theme.MCProdject" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
 </resources>

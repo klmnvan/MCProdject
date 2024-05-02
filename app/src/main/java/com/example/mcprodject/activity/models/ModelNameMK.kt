@@ -1,4 +1,4 @@
-package com.example.mcprodject.activity
+package com.example.mcprodject.activity.models
 
 data class ModelNameMK(
     val id: Number,
