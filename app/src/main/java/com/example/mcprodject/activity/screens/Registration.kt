@@ -3,16 +3,17 @@ package com.example.mcprodject.activity.screens
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
-import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import com.example.mcprodject.R
 import com.example.mcprodject.activity.models.ModelNameMK
+import com.example.mcprodject.activity.theme.ActivityCustomTheme
 import com.example.mcprodject.databinding.ActivityRegistrationBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
-class Registration : AppCompatActivity() {
+class Registration : ActivityCustomTheme() {
 
     private lateinit var binding: ActivityRegistrationBinding
     private var listMK: List<ModelNameMK> = emptyList()
@@ -22,19 +23,6 @@ class Registration : AppCompatActivity() {
         binding = ActivityRegistrationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         processInput()
-        createListMK()
-    }
-
-    private fun createListMK() {
-        listMK = listMK + ModelNameMK(1, "Информационные системы")
-        listMK = listMK + ModelNameMK(2, "Юристы")
-        listMK = listMK + ModelNameMK(3, "Бухгалтера")
-        val spinnerArrayAdapter: ArrayAdapter<String> = ArrayAdapter<String>(
-            this, android.R.layout.simple_spinner_item,
-            listMK.map{it.NamesMK}
-        )
-        spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        binding.spinnerMK.adapter = spinnerArrayAdapter
     }
 
     /**
@@ -77,7 +65,8 @@ class Registration : AppCompatActivity() {
             }
             inputTextPassword.addTextChangedListener{
                 pressingClicks()
-                if(inputTextPassword.text.isNotEmpty()) { (R.drawable.blue_1_5_null_rectg_20_rad)
+                if(inputTextPassword.text.isNotEmpty()) {
+                    inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
                 } else {
                     inPasswordLL.background = null
                 }
@@ -96,6 +85,7 @@ class Registration : AppCompatActivity() {
     /** pressingСlicks() - Обработка нажатий*/
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun pressingClicks(){
+        updateErrorTV("")
         with(binding){
             //Чтобы пользователь точно попал по полю ввода
             famLL.setOnClickListener{
@@ -135,29 +125,43 @@ class Registration : AppCompatActivity() {
             buttonDeleteRepeatPassword.setOnClickListener{
                 inputTextRepeatPassword.text.clear()
             }
+            buttonBack.setOnClickListener {
+                startActivity(Intent(this@Registration, Authorization::class.java))
+                finish()
+            }
+            val email = inputTextLogin.text.toString()
+            val name = inputTextName.text.toString()
+            val surname = inputTextFam.text.toString()
+            val patronymic = inputTextOtch.text.toString()
+            val password = inputTextPassword.text.toString()
+            val passwordConfirm = inputTextRepeatPassword.text.toString()
+
             //Кнопка далее
-            if(
-                inputTextFam.text.isNotEmpty() &&
-                inputTextName.text.isNotEmpty() &&
-                inputTextOtch.text.isNotEmpty() &&
-                inputTextPassword.text.isNotEmpty() &&
-                inputTextRepeatPassword.text.isNotEmpty() &&
-                inputTextLogin.text.isNotEmpty()
-                ) {
+            if (surname.isNotEmpty() && name.isNotEmpty() && patronymic.isNotEmpty() &&
+                password.isNotEmpty() && passwordConfirm.isNotEmpty() && email.isNotEmpty()) {
 
                 buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
-                textError.visibility = View.GONE
 
                 buttonNext.setOnClickListener {
-                    startActivity(Intent(this@Registration, EndRegistration::class.java))
-                    finish()
-                }
 
+                    CoroutineScope(Dispatchers.Main).launch {
+                        val response = service.registerUser(email, surname, name, patronymic, password, passwordConfirm)
+                        if(response == null) {
+                            runOnUiThread {
+                                startActivity(Intent(this@Registration, EndRegistration::class.java))
+                                finish()
+                            }
+                        }
+                        else {
+                            updateErrorTV(response)
+                        }
+                    }
+                }
             }
             else {
                 buttonNext.background = getDrawable(R.drawable.null_ncgray_rectg)
                 buttonNext.setOnClickListener {
-                    textError.visibility = View.VISIBLE
+                    updateErrorTV("Не все поля заполнены")
                     if(inputTextFam.text.isEmpty()) {
                         inFamLL.background = getDrawable(R.drawable.orange_1_5_null_rectg_20_rad)
                     }
@@ -183,6 +187,10 @@ class Registration : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun updateErrorTV(error: String){
+        binding.textError.text = error
     }
 
 }

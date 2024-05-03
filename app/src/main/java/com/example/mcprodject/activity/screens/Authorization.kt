@@ -2,24 +2,25 @@ package com.example.mcprodject.activity.screens
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.view.View
 import androidx.core.widget.addTextChangedListener
 import com.example.mcprodject.R
+import com.example.mcprodject.activity.theme.ActivityCustomTheme
 import com.example.mcprodject.databinding.ActivityAuthorizationBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class Authorization : AppCompatActivity() {
-    lateinit var binding: ActivityAuthorizationBinding
+class Authorization : ActivityCustomTheme() {
+
+    private lateinit var binding: ActivityAuthorizationBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityAuthorizationBinding.inflate(layoutInflater)
         setContentView(binding.root)
         processInput()
-        pressingСlicks()
+        pressingClicks()
         binding.buttonRegist.setOnClickListener {
             startActivity(Intent(this@Authorization, Registration::class.java))
             finish()
@@ -31,7 +32,7 @@ class Authorization : AppCompatActivity() {
     private fun processInput(){
         with(binding){
             inputTextLogin.addTextChangedListener {
-                pressingСlicks()
+                pressingClicks()
                 if(inputTextLogin.text.isNotEmpty()) {
                     inLoginLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
                 } else {
@@ -39,7 +40,7 @@ class Authorization : AppCompatActivity() {
                 }
             }
             inputTextPassword.addTextChangedListener {
-                pressingСlicks()
+                pressingClicks()
                 if(inputTextPassword.text.isNotEmpty()) {
                     inPasswordLL.background = getDrawable(R.drawable.blue_1_5_null_rectg_20_rad)
                 } else {
@@ -51,8 +52,9 @@ class Authorization : AppCompatActivity() {
 
     /** pressingСlicks() - Обработка нажатий*/
     @SuppressLint("UseCompatLoadingForDrawables")
-    private fun pressingСlicks(){
+    private fun pressingClicks(){
         with(binding){
+            updateErrorTV("")
             loginLL.setOnClickListener{
                 inputTextLogin.requestFocus()
             }
@@ -65,18 +67,29 @@ class Authorization : AppCompatActivity() {
             buttonDeletePassword.setOnClickListener {
                 inputTextPassword.text.clear()
             }
-            if(inputTextLogin.text.isNotEmpty() && inputTextPassword.text.isNotEmpty()){
+
+            val email = inputTextLogin.text.toString()
+            val password = inputTextPassword.text.toString()
+            if(email.isNotEmpty() && password.isNotEmpty()) {
                 buttonNext.background = getDrawable(R.drawable.null_blue_rectg)
-                textError.visibility = View.GONE
                 buttonNext.setOnClickListener {
-                    startActivity(Intent(this@Authorization, InputCodeForAuthorization::class.java))
-                    finish()
+                    CoroutineScope(Dispatchers.Main).launch {
+                        val response = service.authorize(email, password)
+                        if(response == null) {
+                            runOnUiThread {
+                                startActivity(Intent(this@Authorization, MainScreen::class.java))
+                                finish()
+                            }
+                        } else {
+                            updateErrorTV(response)
+                        }
+                    }
                 }
             }
             else {
                 buttonNext.background = getDrawable(R.drawable.null_ncgray_rectg)
                 buttonNext.setOnClickListener {
-                    textError.visibility = View.VISIBLE
+                    updateErrorTV("Не все поля заполнены")
                     if(inputTextPassword.text.isEmpty()) {
                         inPasswordLL.background = getDrawable(R.drawable.orange_1_5_null_rectg_20_rad)
                     }
@@ -87,6 +100,10 @@ class Authorization : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun updateErrorTV(error: String){
+        binding.textError.text = error
     }
 
 }

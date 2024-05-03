@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="80dp"
+                android:textAlignment="center"
                 android:text="Регистрация"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -176,7 +177,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/MKLL"
                 style="@style/entryFieldL1"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -210,14 +211,14 @@
 
                 </LinearLayout>
 
-            </LinearLayout>
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/loginLL"
                 style="@style/entryFieldL1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/MKLL">
+                app:layout_constraintTop_toBottomOf="@+id/otchLL">
 
                 <LinearLayout
                     android:id="@+id/inLoginLL"
@@ -359,8 +360,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="15dp"
-                android:visibility="gone"
-                android:text="Не все поля заполнены"
+                android:text=""
                 android:textSize="14dp"
                 android:textColor="?attr/colorError"
                 app:layout_constraintTop_toBottomOf="@+id/repeatPasswordLL"
